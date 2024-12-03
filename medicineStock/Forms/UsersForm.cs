@@ -70,6 +70,7 @@ namespace medicineStock.UI.Forms
 
         private void UsersForm_Load(object sender, EventArgs e)
         {
+            GetAllUsers();
             GetAllUsersBySearchText(string.Empty);
             FormClean();
         }

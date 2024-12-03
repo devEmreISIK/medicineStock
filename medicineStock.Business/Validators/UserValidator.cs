@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace medicineStock.Business.Validators
 {
-    internal class UserValidator : AbstractValidator<User>
+    public class UserValidator : AbstractValidator<User>
     {
         public UserValidator() 
         {
