@@ -12,7 +12,7 @@ using medicineStock.DataAccess.Context;
 namespace medicineStock.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20241202135853_First")]
+    [Migration("20241202150619_First")]
     partial class First
     {
         /// <inheritdoc />
@@ -165,6 +165,9 @@ namespace medicineStock.DataAccess.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Surname")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TCno")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

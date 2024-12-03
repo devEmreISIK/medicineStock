@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.11.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\medicineStock.DataAccess\medicineStock.DataAccess.csproj" />
     <ProjectReference Include="..\medicineStock.Entities\medicineStock.Entities\medicineStock.Entities.csproj" />
   </ItemGroup>
