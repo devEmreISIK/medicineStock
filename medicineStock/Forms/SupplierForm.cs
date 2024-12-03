@@ -31,7 +31,7 @@ namespace medicineStock.UI.Forms
         private void SupplierForm_Load(object sender, EventArgs e)
         {
             GetAllSuppliersBySearchText(string.Empty);
-            GetAllUsers();
+            GetAllSuppliers();
             FormClean();
         }
 
@@ -54,7 +54,7 @@ namespace medicineStock.UI.Forms
             }
         }
 
-        private void GetAllUsers()
+        private void GetAllSuppliers()
         {
             lstSuppliers.ValueMember = "Id";
             lstSuppliers.DisplayMember = "SupplierName";
@@ -109,7 +109,7 @@ namespace medicineStock.UI.Forms
 
                 _supplierService.Create(supplier);
                 MessageBox.Show("Success!");
-                GetAllUsers();
+                GetAllSuppliers();
                 FormClean();
             }
             catch (Exception ex)
@@ -141,7 +141,7 @@ namespace medicineStock.UI.Forms
             if (selectedSupplier != null)
             {
                 _supplierService.Delete(selectedSupplier.Id);
-                GetAllUsers();
+                GetAllSuppliers();
                 MessageBox.Show("Success!");
             }
             else
