@@ -45,7 +45,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(342, 246);
+            button1.Location = new Point(620, 345);
             button1.Name = "button1";
             button1.Size = new Size(99, 52);
             button1.TabIndex = 41;
@@ -56,7 +56,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(12, 77);
+            label5.Location = new Point(12, 23);
             label5.Name = "label5";
             label5.Size = new Size(56, 20);
             label5.TabIndex = 40;
@@ -65,23 +65,23 @@
             // lstReminders
             // 
             lstReminders.FormattingEnabled = true;
-            lstReminders.Location = new Point(12, 107);
+            lstReminders.Location = new Point(12, 53);
             lstReminders.Name = "lstReminders";
-            lstReminders.Size = new Size(214, 324);
+            lstReminders.Size = new Size(923, 164);
             lstReminders.TabIndex = 39;
             lstReminders.SelectedIndexChanged += lstReminders_SelectedIndexChanged;
             // 
             // reminderSearchTxtBox
             // 
-            reminderSearchTxtBox.Location = new Point(71, 74);
+            reminderSearchTxtBox.Location = new Point(71, 20);
             reminderSearchTxtBox.Name = "reminderSearchTxtBox";
-            reminderSearchTxtBox.Size = new Size(155, 27);
+            reminderSearchTxtBox.Size = new Size(864, 27);
             reminderSearchTxtBox.TabIndex = 38;
             reminderSearchTxtBox.TextChanged += reminderSearchTxtBox_TextChanged;
             // 
             // btnUpdate
             // 
-            btnUpdate.Location = new Point(132, 16);
+            btnUpdate.Location = new Point(132, 227);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(94, 52);
             btnUpdate.TabIndex = 37;
@@ -91,7 +91,7 @@
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(12, 16);
+            btnDelete.Location = new Point(12, 227);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(114, 52);
             btnDelete.TabIndex = 36;
@@ -101,7 +101,7 @@
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(447, 246);
+            btnAdd.Location = new Point(725, 345);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(210, 52);
             btnAdd.TabIndex = 35;
@@ -112,7 +112,7 @@
             // cmbMedicine
             // 
             cmbMedicine.FormattingEnabled = true;
-            cmbMedicine.Location = new Point(374, 107);
+            cmbMedicine.Location = new Point(652, 229);
             cmbMedicine.Name = "cmbMedicine";
             cmbMedicine.Size = new Size(283, 28);
             cmbMedicine.TabIndex = 42;
@@ -121,7 +121,7 @@
             // cmbUser
             // 
             cmbUser.FormattingEnabled = true;
-            cmbUser.Location = new Point(374, 141);
+            cmbUser.Location = new Point(652, 263);
             cmbUser.Name = "cmbUser";
             cmbUser.Size = new Size(283, 28);
             cmbUser.TabIndex = 43;
@@ -129,7 +129,7 @@
             // 
             // dtpRemind
             // 
-            dtpRemind.Location = new Point(374, 175);
+            dtpRemind.Location = new Point(652, 297);
             dtpRemind.Name = "dtpRemind";
             dtpRemind.Size = new Size(283, 27);
             dtpRemind.TabIndex = 44;
@@ -137,7 +137,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(295, 110);
+            label1.Location = new Point(573, 232);
             label1.Name = "label1";
             label1.Size = new Size(73, 20);
             label1.TabIndex = 45;
@@ -146,7 +146,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(311, 144);
+            label2.Location = new Point(589, 266);
             label2.Name = "label2";
             label2.Size = new Size(57, 20);
             label2.TabIndex = 46;
@@ -155,7 +155,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(269, 180);
+            label3.Location = new Point(547, 302);
             label3.Name = "label3";
             label3.Size = new Size(99, 20);
             label3.TabIndex = 47;
@@ -165,7 +165,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(718, 476);
+            ClientSize = new Size(959, 428);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -180,7 +180,7 @@
             Controls.Add(btnDelete);
             Controls.Add(btnAdd);
             Name = "ReminderForm";
-            Text = "ReminderForm";
+            Text = "Reminder Manager";
             Load += ReminderForm_Load;
             ResumeLayout(false);
             PerformLayout();

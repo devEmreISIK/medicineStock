@@ -42,6 +42,7 @@
             label1 = new Label();
             label2 = new Label();
             btnPdfCreate = new Button();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -65,6 +66,7 @@
             // 
             // userSearchTxtBox
             // 
+            userSearchTxtBox.BackColor = Color.White;
             userSearchTxtBox.Location = new Point(74, 53);
             userSearchTxtBox.Name = "userSearchTxtBox";
             userSearchTxtBox.Size = new Size(155, 27);
@@ -73,7 +75,7 @@
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(395, 274);
+            btnDelete.Location = new Point(877, 427);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(114, 52);
             btnDelete.TabIndex = 43;
@@ -83,7 +85,7 @@
             // 
             // btnCreate
             // 
-            btnCreate.Location = new Point(515, 274);
+            btnCreate.Location = new Point(997, 427);
             btnCreate.Name = "btnCreate";
             btnCreate.Size = new Size(210, 52);
             btnCreate.TabIndex = 42;
@@ -95,10 +97,10 @@
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { UserName, ReportContent, CreatedDate, Id, UserId });
-            dataGridView1.Location = new Point(275, 63);
+            dataGridView1.Location = new Point(269, 63);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(938, 109);
+            dataGridView1.Size = new Size(938, 347);
             dataGridView1.TabIndex = 49;
             // 
             // UserName
@@ -115,7 +117,7 @@
             ReportContent.HeaderText = "Report Content";
             ReportContent.MinimumWidth = 6;
             ReportContent.Name = "ReportContent";
-            ReportContent.Width = 125;
+            ReportContent.Width = 400;
             // 
             // CreatedDate
             // 
@@ -147,35 +149,46 @@
             label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 162);
             label1.Location = new Point(12, 9);
             label1.Name = "label1";
-            label1.Size = new Size(134, 38);
+            label1.Size = new Size(140, 38);
             label1.TabIndex = 50;
-            label1.Text = "Find User";
+            label1.Text = "Find User:";
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            label2.Location = new Point(275, 9);
+            label2.Location = new Point(269, 9);
             label2.Name = "label2";
-            label2.Size = new Size(215, 38);
+            label2.Size = new Size(221, 38);
             label2.TabIndex = 51;
-            label2.Text = "Created Reports";
+            label2.Text = "Created Reports:";
             // 
             // btnPdfCreate
             // 
-            btnPdfCreate.Location = new Point(395, 216);
+            btnPdfCreate.Location = new Point(997, 485);
             btnPdfCreate.Name = "btnPdfCreate";
-            btnPdfCreate.Size = new Size(114, 52);
+            btnPdfCreate.Size = new Size(210, 52);
             btnPdfCreate.TabIndex = 52;
             btnPdfCreate.Text = "Create PDF";
             btnPdfCreate.UseVisualStyleBackColor = true;
             btnPdfCreate.Click += button1_Click;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(997, 540);
+            label3.Name = "label3";
+            label3.Size = new Size(111, 20);
+            label3.TabIndex = 53;
+            label3.Text = "*Saves Desktop";
+            label3.Click += label3_Click;
+            // 
             // ReportForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1270, 465);
+            ClientSize = new Size(1235, 569);
+            Controls.Add(label3);
             Controls.Add(btnPdfCreate);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -186,7 +199,7 @@
             Controls.Add(btnDelete);
             Controls.Add(btnCreate);
             Name = "ReportForm";
-            Text = "ReportForm";
+            Text = "Report Manager";
             Load += ReportForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
@@ -209,5 +222,6 @@
         private DataGridViewTextBoxColumn CreatedDate;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn UserId;
+        private Label label3;
     }
 }

@@ -47,6 +47,9 @@
             nmbrStock = new NumericUpDown();
             nmbrDosage = new NumericUpDown();
             nmbrUsageWeek = new NumericUpDown();
+            label7 = new Label();
+            label8 = new Label();
+            label9 = new Label();
             ((System.ComponentModel.ISupportInitialize)nmbrStock).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nmbrDosage).BeginInit();
             ((System.ComponentModel.ISupportInitialize)nmbrUsageWeek).BeginInit();
@@ -54,7 +57,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(459, 375);
+            button1.Location = new Point(438, 375);
             button1.Name = "button1";
             button1.Size = new Size(99, 52);
             button1.TabIndex = 47;
@@ -74,7 +77,7 @@
             // lblTcNo
             // 
             lblTcNo.AutoSize = true;
-            lblTcNo.Location = new Point(323, 196);
+            lblTcNo.Location = new Point(302, 196);
             lblTcNo.Name = "lblTcNo";
             lblTcNo.Size = new Size(48, 20);
             lblTcNo.TabIndex = 45;
@@ -83,7 +86,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(320, 153);
+            label4.Location = new Point(299, 153);
             label4.Name = "label4";
             label4.Size = new Size(51, 20);
             label4.TabIndex = 43;
@@ -92,7 +95,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(320, 110);
+            label1.Location = new Point(299, 110);
             label1.Name = "label1";
             label1.Size = new Size(52, 20);
             label1.TabIndex = 42;
@@ -100,14 +103,14 @@
             // 
             // txtBrand
             // 
-            txtBrand.Location = new Point(380, 150);
+            txtBrand.Location = new Point(359, 150);
             txtBrand.Name = "txtBrand";
             txtBrand.Size = new Size(394, 27);
             txtBrand.TabIndex = 41;
             // 
             // txtName
             // 
-            txtName.Location = new Point(380, 107);
+            txtName.Location = new Point(359, 107);
             txtName.Name = "txtName";
             txtName.Size = new Size(394, 27);
             txtName.TabIndex = 40;
@@ -151,7 +154,7 @@
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(564, 375);
+            btnAdd.Location = new Point(543, 375);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(210, 52);
             btnAdd.TabIndex = 35;
@@ -162,7 +165,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(311, 239);
+            label2.Location = new Point(290, 239);
             label2.Name = "label2";
             label2.Size = new Size(63, 20);
             label2.TabIndex = 49;
@@ -171,7 +174,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(278, 281);
+            label3.Location = new Point(260, 276);
             label3.Name = "label3";
             label3.Size = new Size(93, 20);
             label3.TabIndex = 51;
@@ -180,7 +183,7 @@
             // cmbSupplier
             // 
             cmbSupplier.FormattingEnabled = true;
-            cmbSupplier.Location = new Point(380, 321);
+            cmbSupplier.Location = new Point(359, 321);
             cmbSupplier.Name = "cmbSupplier";
             cmbSupplier.Size = new Size(394, 28);
             cmbSupplier.TabIndex = 52;
@@ -189,7 +192,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(304, 324);
+            label6.Location = new Point(283, 324);
             label6.Name = "label6";
             label6.Size = new Size(67, 20);
             label6.TabIndex = 53;
@@ -197,7 +200,7 @@
             // 
             // nmbrStock
             // 
-            nmbrStock.Location = new Point(380, 194);
+            nmbrStock.Location = new Point(359, 194);
             nmbrStock.Maximum = new decimal(new int[] { 5000, 0, 0, 0 });
             nmbrStock.Name = "nmbrStock";
             nmbrStock.Size = new Size(150, 27);
@@ -205,7 +208,7 @@
             // 
             // nmbrDosage
             // 
-            nmbrDosage.Location = new Point(380, 237);
+            nmbrDosage.Location = new Point(359, 237);
             nmbrDosage.Maximum = new decimal(new int[] { 5000, 0, 0, 0 });
             nmbrDosage.Name = "nmbrDosage";
             nmbrDosage.Size = new Size(150, 27);
@@ -213,16 +216,47 @@
             // 
             // nmbrUsageWeek
             // 
-            nmbrUsageWeek.Location = new Point(380, 274);
+            nmbrUsageWeek.Location = new Point(359, 274);
             nmbrUsageWeek.Name = "nmbrUsageWeek";
             nmbrUsageWeek.Size = new Size(150, 27);
             nmbrUsageWeek.TabIndex = 56;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(515, 239);
+            label7.Name = "label7";
+            label7.Size = new Size(31, 20);
+            label7.TabIndex = 57;
+            label7.Text = "mg";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(515, 276);
+            label8.Name = "label8";
+            label8.Size = new Size(43, 20);
+            label8.TabIndex = 58;
+            label8.Text = "week";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            label9.Location = new Point(359, 26);
+            label9.Name = "label9";
+            label9.Size = new Size(211, 38);
+            label9.TabIndex = 59;
+            label9.Text = "Medicine Stock:";
             // 
             // MedicineForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(785, 450);
+            Controls.Add(label9);
+            Controls.Add(label8);
+            Controls.Add(label7);
             Controls.Add(nmbrUsageWeek);
             Controls.Add(nmbrDosage);
             Controls.Add(nmbrStock);
@@ -243,7 +277,7 @@
             Controls.Add(btnDelete);
             Controls.Add(btnAdd);
             Name = "MedicineForm";
-            Text = "MedicineForm";
+            Text = "Medicine Manager";
             Load += MedicineForm_Load;
             ((System.ComponentModel.ISupportInitialize)nmbrStock).EndInit();
             ((System.ComponentModel.ISupportInitialize)nmbrDosage).EndInit();
@@ -273,5 +307,8 @@
         private NumericUpDown nmbrStock;
         private NumericUpDown nmbrDosage;
         private NumericUpDown nmbrUsageWeek;
+        private Label label7;
+        private Label label8;
+        private Label label9;
     }
 }

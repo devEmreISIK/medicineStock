@@ -176,7 +176,7 @@
             Controls.Add(btnDelete);
             Controls.Add(btnAdd);
             Name = "SupplierForm";
-            Text = "SupplierForm";
+            Text = "Supplier Manager";
             Load += SupplierForm_Load;
             ResumeLayout(false);
             PerformLayout();

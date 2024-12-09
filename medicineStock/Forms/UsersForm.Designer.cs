@@ -216,7 +216,7 @@
             Controls.Add(btnDelete);
             Controls.Add(btnAdd);
             Name = "UsersForm";
-            Text = "UsersForm";
+            Text = "Users Manager";
             Load += UsersForm_Load;
             ResumeLayout(false);
             PerformLayout();

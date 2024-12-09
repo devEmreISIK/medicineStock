@@ -220,7 +220,7 @@ namespace medicineStock.UI.Forms
                                 .SetFont(font));
                         }
 
-                        document.Close();  
+                        document.Close();
                     }
 
                     Process.Start(new ProcessStartInfo
@@ -245,6 +245,11 @@ namespace medicineStock.UI.Forms
         private void userSearchTxtBox_TextChanged(object sender, EventArgs e)
         {
             GetAllUsersBySearchText(userSearchTxtBox.Text);
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
