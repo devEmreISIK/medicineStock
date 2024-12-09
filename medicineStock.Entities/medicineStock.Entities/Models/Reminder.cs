@@ -15,5 +15,9 @@ namespace medicineStock.Entities.Models
 
         public User? User { get; set; }
         public Medicine? Medicine { get; set; }
+
+        public string? UserName { get; set; }
+        public string? MedicineName { get; set; }
+
     }
 }

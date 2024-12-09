@@ -40,7 +40,7 @@ namespace medicineStock.UI.Forms
             menuStrip1.Items.AddRange(new ToolStripItem[] { ılacYonetimiToolStripMenuItem, tedarikciYonetimiToolStripMenuItem, kullanıcıYonetimiToolStripMenuItem, cikisToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(538, 28);
+            menuStrip1.Size = new Size(559, 28);
             menuStrip1.TabIndex = 4;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -103,11 +103,12 @@ namespace medicineStock.UI.Forms
             // 
             // MainForm
             // 
-            ClientSize = new Size(538, 464);
+            ClientSize = new Size(559, 498);
             Controls.Add(panel1);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "MainForm";
+            Load += MainForm_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             panel1.ResumeLayout(false);
@@ -164,11 +165,16 @@ namespace medicineStock.UI.Forms
 
         private void button6_Click(object sender, EventArgs e)
         {
-            MedicineForm medicineForm=new MedicineForm();
+            MedicineForm medicineForm = new MedicineForm();
             medicineForm.TopLevel = false;
             panel1.Controls.Clear();
             panel1.Controls.Add(medicineForm);
             medicineForm.Show();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
