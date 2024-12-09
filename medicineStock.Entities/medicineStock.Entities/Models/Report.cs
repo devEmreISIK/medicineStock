@@ -12,5 +12,7 @@ namespace medicineStock.Entities.Models
         public Guid UserID { get; set; }
         public string? Content { get; set; }
         public User? User { get; set; }
+
+        public string? UserName => User?.FullName;
     }
 }

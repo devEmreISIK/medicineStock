@@ -26,6 +26,8 @@ namespace medicineStock.UI.Forms
             ılacYonetimiToolStripMenuItem = new ToolStripMenuItem();
             tedarikciYonetimiToolStripMenuItem = new ToolStripMenuItem();
             kullanıcıYonetimiToolStripMenuItem = new ToolStripMenuItem();
+            hatırlatıcıYönetimiToolStripMenuItem = new ToolStripMenuItem();
+            raporYönetimiToolStripMenuItem = new ToolStripMenuItem();
             cikisToolStripMenuItem = new ToolStripMenuItem();
             panel1 = new Panel();
             button6 = new Button();
@@ -37,10 +39,10 @@ namespace medicineStock.UI.Forms
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { ılacYonetimiToolStripMenuItem, tedarikciYonetimiToolStripMenuItem, kullanıcıYonetimiToolStripMenuItem, cikisToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { ılacYonetimiToolStripMenuItem, tedarikciYonetimiToolStripMenuItem, kullanıcıYonetimiToolStripMenuItem, hatırlatıcıYönetimiToolStripMenuItem, raporYönetimiToolStripMenuItem, cikisToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(559, 28);
+            menuStrip1.Size = new Size(889, 28);
             menuStrip1.TabIndex = 4;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -64,6 +66,20 @@ namespace medicineStock.UI.Forms
             kullanıcıYonetimiToolStripMenuItem.Size = new Size(141, 24);
             kullanıcıYonetimiToolStripMenuItem.Text = "Kullanıcı Yonetimi";
             kullanıcıYonetimiToolStripMenuItem.Click += kullanıcıYonetimiToolStripMenuItem_Click;
+            // 
+            // hatırlatıcıYönetimiToolStripMenuItem
+            // 
+            hatırlatıcıYönetimiToolStripMenuItem.Name = "hatırlatıcıYönetimiToolStripMenuItem";
+            hatırlatıcıYönetimiToolStripMenuItem.Size = new Size(150, 24);
+            hatırlatıcıYönetimiToolStripMenuItem.Text = "Hatırlatıcı Yönetimi";
+            hatırlatıcıYönetimiToolStripMenuItem.Click += hatırlatıcıYönetimiToolStripMenuItem_Click;
+            // 
+            // raporYönetimiToolStripMenuItem
+            // 
+            raporYönetimiToolStripMenuItem.Name = "raporYönetimiToolStripMenuItem";
+            raporYönetimiToolStripMenuItem.Size = new Size(125, 24);
+            raporYönetimiToolStripMenuItem.Text = "Rapor Yönetimi";
+            raporYönetimiToolStripMenuItem.Click += raporYönetimiToolStripMenuItem_Click;
             // 
             // cikisToolStripMenuItem
             // 
@@ -103,7 +119,7 @@ namespace medicineStock.UI.Forms
             // 
             // MainForm
             // 
-            ClientSize = new Size(559, 498);
+            ClientSize = new Size(889, 516);
             Controls.Add(panel1);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
@@ -175,6 +191,21 @@ namespace medicineStock.UI.Forms
         private void MainForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private ToolStripMenuItem hatırlatıcıYönetimiToolStripMenuItem;
+        private ToolStripMenuItem raporYönetimiToolStripMenuItem;
+
+        private void hatırlatıcıYönetimiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReminderForm reminderForm = new ReminderForm();
+            reminderForm.Show();
+        }
+
+        private void raporYönetimiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReportForm reportForm = new ReportForm();
+            reportForm.Show();
         }
     }
 }

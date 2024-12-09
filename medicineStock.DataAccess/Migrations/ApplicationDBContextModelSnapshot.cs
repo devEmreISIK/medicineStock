@@ -74,6 +74,9 @@ namespace medicineStock.DataAccess.Migrations
                     b.Property<Guid>("MedicineID")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("MedicineName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("RemindDate")
                         .HasColumnType("datetime2");
 
@@ -81,9 +84,6 @@ namespace medicineStock.DataAccess.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("UserName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("MedicineName")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

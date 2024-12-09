@@ -12,8 +12,8 @@ using medicineStock.DataAccess.Context;
 namespace medicineStock.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20241202150619_First")]
-    partial class First
+    [Migration("20241209130551_FirstInit")]
+    partial class FirstInit
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -77,11 +77,17 @@ namespace medicineStock.DataAccess.Migrations
                     b.Property<Guid>("MedicineID")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("MedicineName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("RemindDate")
                         .HasColumnType("datetime2");
 
                     b.Property<Guid>("UserID")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
