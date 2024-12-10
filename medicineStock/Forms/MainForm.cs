@@ -22,6 +22,7 @@ namespace medicineStock.UI.Forms
         ReminderService _reminderService;
         ReportService _reportService;
         SupplierService _supplierService;
+        MedicineService _medicineService;
 
         public MainForm()
         {
@@ -38,6 +39,9 @@ namespace medicineStock.UI.Forms
 
             SupplierRepository supplierRepository = new SupplierRepository(_dbContext);
             _supplierService = new SupplierService(supplierRepository);
+
+            MedicineRepository medicineRepository = new MedicineRepository(_dbContext);
+            _medicineService = new MedicineService(medicineRepository);
         }
 
         private void InitializeComponent()
@@ -56,6 +60,7 @@ namespace medicineStock.UI.Forms
             lstReminders = new ListBox();
             label5 = new Label();
             label6 = new Label();
+            button4 = new Button();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -159,7 +164,7 @@ namespace medicineStock.UI.Forms
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 162);
-            label5.Location = new Point(12, 228);
+            label5.Location = new Point(12, 225);
             label5.Name = "label5";
             label5.Size = new Size(303, 31);
             label5.TabIndex = 41;
@@ -175,9 +180,24 @@ namespace medicineStock.UI.Forms
             label6.TabIndex = 42;
             label6.Text = "İstatistikler:";
             // 
+            // button4
+            // 
+            button4.BackColor = Color.Transparent;
+            button4.BackgroundImageLayout = ImageLayout.None;
+            button4.FlatStyle = FlatStyle.Popup;
+            button4.ForeColor = SystemColors.ControlText;
+            button4.Location = new Point(791, 229);
+            button4.Name = "button4";
+            button4.Size = new Size(68, 30);
+            button4.TabIndex = 43;
+            button4.Text = "Yenile";
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
+            // 
             // MainForm
             // 
             ClientSize = new Size(889, 476);
+            Controls.Add(button4);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(lstReminders);
@@ -240,12 +260,17 @@ namespace medicineStock.UI.Forms
         {
             var today = DateTime.Now;
 
+            var users = _userService.GetAll().ToDictionary(u => u.Id);
+            var medicines = _medicineService.GetAll().ToDictionary(m => m.Id);
+
             var reminders = _reminderService.GetAll()
                 .Where(r => (r.RemindDate - today).TotalDays <= 3 && r.RemindDate >= today)
                 .Select(r => new
                 {
                     r.Id,
-                    DisplayText = $"{r.UserName} - {r.MedicineName ?? "İlaç Yok"} - {Math.Ceiling((r.RemindDate - today).TotalDays)} gün kaldı"
+                    DisplayText = $"{(users.ContainsKey(r.UserID) ? users[r.UserID].FullName : "Bilinmeyen Kullanıcı")} - " +
+                                  $"{(medicines.ContainsKey(r.MedicineID) ? medicines[r.MedicineID].MedicineName : "İlaç Yok")} - " +
+                                  $"{Math.Ceiling((r.RemindDate - today).TotalDays)} gün kaldı"
                 })
                 .ToList();
 
@@ -259,6 +284,7 @@ namespace medicineStock.UI.Forms
                 MessageBox.Show("3 gün içinde herhangi bir hatırlatma bulunmamaktadır.");
             }
         }
+
 
         private void CountCalculator()
         {
@@ -297,5 +323,11 @@ namespace medicineStock.UI.Forms
         private ListBox lstReminders;
         private Label label5;
         private Label label6;
+        private Button button4;
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            GetAllExpiringReminders();
+        }
     }
 }

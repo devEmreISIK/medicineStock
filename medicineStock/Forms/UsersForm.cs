@@ -136,6 +136,7 @@ namespace medicineStock.UI.Forms
                 selectedUser.Phone = txtPhone.Text;
 
                 _userService.Update(selectedUser);
+                GetAllUsers();
                 MessageBox.Show("Success!");
             }
             else

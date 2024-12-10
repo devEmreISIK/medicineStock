@@ -70,31 +70,48 @@ namespace medicineStock.UI.Forms
 
         private void GetAllReminders()
         {
+            var reminders = _reminderService.GetAll()
+                .Select(r => new
+                {
+                    r.Id, // Değer seçimi için
+                    DisplayText = $"{_userService.GetByID(r.UserID).FullName} - {r.MedicineName ?? "İlaç Yok"} - {r.RemindDate:dd.MM.yyyy}"
+                })
+                .ToList();
+
             lstReminders.ValueMember = "Id";
-            lstReminders.DisplayMember = "UserName";
-            lstReminders.DataSource = _reminderService.GetAll();
+            lstReminders.DisplayMember = "DisplayText";
+            lstReminders.DataSource = reminders;
             lstReminders.SelectedIndex = -1;
+
             FormClean();
         }
 
+
         private void GetAllRemindersBySearchText(string searchText)
         {
-            if (!string.IsNullOrEmpty(searchText.ToLower()) && searchText.Length >= 3)
-            {
-                var reminderList = _reminderService.GetAll().Where(r => r.User!.FullName!.ToLower().Contains(searchText.ToLower()));
+            var users = _userService.GetAll().ToDictionary(u => u.Id);
+            var medicines = _medicineService.GetAll().ToDictionary(m => m.Id);
 
-                lstReminders.ValueMember = "Id";
-                lstReminders.DisplayMember = "UserName";
-                lstReminders.DataSource = reminderList.ToList();
-            }
+            var reminders = _reminderService.GetAll()
+                .Where(r =>
+                    (users.ContainsKey(r.UserID) && users[r.UserID].FullName!.ToLower().Contains(searchText.ToLower())) ||
+                    (medicines.ContainsKey(r.MedicineID) && medicines[r.MedicineID].MedicineName!.ToLower().Contains(searchText.ToLower()))
+                )
+                .Select(r => new
+                {
+                    r.Id,
+                    DisplayText = $"{(users.ContainsKey(r.UserID) ? users[r.UserID].FullName : "Bilinmeyen Kullanıcı")} - " +
+                                  $"{(medicines.ContainsKey(r.MedicineID) ? medicines[r.MedicineID].MedicineName : "İlaç Yok")} - " +
+                                  $"{r.RemindDate:dd.MM.yyyy}"
+                })
+                .ToList();
 
-            if (searchText.Length == 0)
-            {
-                lstReminders.ValueMember = "Id";
-                lstReminders.DisplayMember = "UserName";
-                lstReminders.DataSource = _reminderService.GetAll().ToList();
-            }
+            lstReminders.ValueMember = "Id";
+            lstReminders.DisplayMember = "DisplayText";
+            lstReminders.DataSource = reminders;
+            lstReminders.SelectedIndex = -1;
         }
+
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -133,7 +150,8 @@ namespace medicineStock.UI.Forms
         {
             if (lstReminders.SelectedIndex != -1)
             {
-                selectedReminder = (Reminder?)lstReminders.SelectedItem;
+                var selectedId = (Guid)lstReminders.SelectedValue;
+                selectedReminder = _reminderService.GetAll().FirstOrDefault(r => r.Id == selectedId);
 
                 if (selectedReminder != null)
                 {
@@ -143,6 +161,7 @@ namespace medicineStock.UI.Forms
                 }
             }
         }
+
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
