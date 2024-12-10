@@ -61,7 +61,10 @@ namespace medicineStock.UI.Forms
             label5 = new Label();
             label6 = new Label();
             button4 = new Button();
+            panel1 = new Panel();
+            label7 = new Label();
             menuStrip1.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
@@ -185,18 +188,40 @@ namespace medicineStock.UI.Forms
             button4.BackColor = Color.Transparent;
             button4.BackgroundImageLayout = ImageLayout.None;
             button4.FlatStyle = FlatStyle.Popup;
+            button4.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 162);
             button4.ForeColor = SystemColors.ControlText;
-            button4.Location = new Point(791, 229);
+            button4.Location = new Point(715, 225);
             button4.Name = "button4";
-            button4.Size = new Size(68, 30);
+            button4.Size = new Size(144, 34);
             button4.TabIndex = 43;
             button4.Text = "Yenile";
             button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(255, 192, 128);
+            panel1.Controls.Add(label7);
+            panel1.Location = new Point(-3, 432);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(892, 51);
+            panel1.TabIndex = 44;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe Print", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 162);
+            label7.Location = new Point(230, 4);
+            label7.Name = "label7";
+            label7.Size = new Size(458, 40);
+            label7.TabIndex = 0;
+            label7.Text = "Hatırlatıcılı İlaç Stok Yönetim Sistemi";
+            // 
             // MainForm
             // 
-            ClientSize = new Size(889, 476);
+            BackColor = SystemColors.ActiveCaption;
+            ClientSize = new Size(889, 482);
+            Controls.Add(panel1);
             Controls.Add(button4);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -212,6 +237,8 @@ namespace medicineStock.UI.Forms
             Load += MainForm_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -329,5 +356,8 @@ namespace medicineStock.UI.Forms
         {
             GetAllExpiringReminders();
         }
+
+        private Panel panel1;
+        private Label label7;
     }
 }
