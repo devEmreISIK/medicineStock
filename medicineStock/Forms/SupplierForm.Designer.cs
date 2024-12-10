@@ -45,9 +45,9 @@
             // 
             // button1
             // 
-            button1.Location = new Point(399, 246);
+            button1.Location = new Point(320, 246);
             button1.Name = "button1";
-            button1.Size = new Size(99, 52);
+            button1.Size = new Size(178, 52);
             button1.TabIndex = 34;
             button1.Text = "Clean";
             button1.UseVisualStyleBackColor = true;
@@ -161,6 +161,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.LightSeaGreen;
             ClientSize = new Size(746, 447);
             Controls.Add(button1);
             Controls.Add(label5);

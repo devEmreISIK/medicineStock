@@ -57,9 +57,9 @@
             // 
             // button1
             // 
-            button1.Location = new Point(438, 375);
+            button1.Location = new Point(359, 355);
             button1.Name = "button1";
-            button1.Size = new Size(99, 52);
+            button1.Size = new Size(178, 52);
             button1.TabIndex = 47;
             button1.Text = "Clean";
             button1.UseVisualStyleBackColor = true;
@@ -154,7 +154,7 @@
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(543, 375);
+            btnAdd.Location = new Point(543, 355);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(210, 52);
             btnAdd.TabIndex = 35;
@@ -253,7 +253,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(785, 450);
+            BackColor = Color.SkyBlue;
+            ClientSize = new Size(771, 445);
             Controls.Add(label9);
             Controls.Add(label8);
             Controls.Add(label7);

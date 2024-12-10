@@ -75,9 +75,9 @@
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(877, 427);
+            btnDelete.Location = new Point(855, 427);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(114, 52);
+            btnDelete.Size = new Size(136, 52);
             btnDelete.TabIndex = 43;
             btnDelete.Text = "Delete Report";
             btnDelete.UseVisualStyleBackColor = true;
@@ -187,6 +187,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Plum;
             ClientSize = new Size(1235, 569);
             Controls.Add(label3);
             Controls.Add(btnPdfCreate);

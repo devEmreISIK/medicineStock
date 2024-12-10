@@ -200,7 +200,7 @@ namespace medicineStock.UI.Forms
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(255, 192, 128);
+            panel1.BackColor = Color.LightGreen;
             panel1.Controls.Add(label7);
             panel1.Location = new Point(-3, 432);
             panel1.Name = "panel1";
@@ -219,7 +219,7 @@ namespace medicineStock.UI.Forms
             // 
             // MainForm
             // 
-            BackColor = SystemColors.ActiveCaption;
+            BackColor = Color.Bisque;
             ClientSize = new Size(889, 482);
             Controls.Add(panel1);
             Controls.Add(button4);
