@@ -153,6 +153,7 @@ namespace medicineStock.UI.Forms
                 selectedMedicine.SupplierID = (Guid)cmbSupplier.SelectedValue;
 
                 _medicineService.Update(selectedMedicine);
+                GetAllMedicines();
                 FormClean();
                 MessageBox.Show("Success!");
             }

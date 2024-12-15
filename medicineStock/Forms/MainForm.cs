@@ -64,8 +64,11 @@ namespace medicineStock.UI.Forms
             button4 = new Button();
             panel1 = new Panel();
             label7 = new Label();
+            panel2 = new Panel();
+            label8 = new Label();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
@@ -74,7 +77,7 @@ namespace medicineStock.UI.Forms
             menuStrip1.Items.AddRange(new ToolStripItem[] { ılacYonetimiToolStripMenuItem, tedarikciYonetimiToolStripMenuItem, kullanıcıYonetimiToolStripMenuItem, hatırlatıcıYönetimiToolStripMenuItem, raporYönetimiToolStripMenuItem, cikisToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(889, 28);
+            menuStrip1.Size = new Size(871, 28);
             menuStrip1.TabIndex = 4;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -125,7 +128,7 @@ namespace medicineStock.UI.Forms
             label1.AutoSize = true;
             label1.BackColor = Color.MediumTurquoise;
             label1.Font = new Font("Calibri", 10.8F, FontStyle.Bold | FontStyle.Italic);
-            label1.Location = new Point(43, 154);
+            label1.Location = new Point(14, 13);
             label1.Name = "label1";
             label1.Size = new Size(164, 22);
             label1.TabIndex = 5;
@@ -136,7 +139,7 @@ namespace medicineStock.UI.Forms
             label2.AutoSize = true;
             label2.BackColor = Color.MediumTurquoise;
             label2.Font = new Font("Calibri", 10.8F, FontStyle.Bold | FontStyle.Italic);
-            label2.Location = new Point(43, 184);
+            label2.Location = new Point(14, 68);
             label2.Name = "label2";
             label2.Size = new Size(186, 22);
             label2.TabIndex = 6;
@@ -147,7 +150,7 @@ namespace medicineStock.UI.Forms
             label3.AutoSize = true;
             label3.BackColor = Color.MediumTurquoise;
             label3.Font = new Font("Calibri", 10.8F, FontStyle.Bold | FontStyle.Italic);
-            label3.Location = new Point(43, 213);
+            label3.Location = new Point(325, 15);
             label3.Name = "label3";
             label3.Size = new Size(194, 22);
             label3.TabIndex = 7;
@@ -158,7 +161,7 @@ namespace medicineStock.UI.Forms
             label4.AutoSize = true;
             label4.BackColor = Color.MediumTurquoise;
             label4.Font = new Font("Calibri", 10.8F, FontStyle.Bold | FontStyle.Italic);
-            label4.Location = new Point(43, 242);
+            label4.Location = new Point(325, 68);
             label4.Name = "label4";
             label4.Size = new Size(166, 22);
             label4.TabIndex = 8;
@@ -188,7 +191,7 @@ namespace medicineStock.UI.Forms
             label6.AutoSize = true;
             label6.BackColor = Color.MediumTurquoise;
             label6.Font = new Font("Calibri", 16.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 162);
-            label6.Location = new Point(43, 112);
+            label6.Location = new Point(12, 97);
             label6.Name = "label6";
             label6.Size = new Size(153, 35);
             label6.TabIndex = 42;
@@ -222,31 +225,55 @@ namespace medicineStock.UI.Forms
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe Print", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 162);
-            label7.Location = new Point(230, 4);
+            label7.Location = new Point(203, 5);
             label7.Name = "label7";
             label7.Size = new Size(458, 40);
             label7.TabIndex = 0;
             label7.Text = "Hatırlatıcılı İlaç Stok Yönetim Sistemi";
             // 
+            // panel2
+            // 
+            panel2.BackColor = Color.MediumTurquoise;
+            panel2.Controls.Add(label8);
+            panel2.Controls.Add(label4);
+            panel2.Controls.Add(label1);
+            panel2.Controls.Add(label2);
+            panel2.Controls.Add(label3);
+            panel2.ForeColor = SystemColors.ActiveCaptionText;
+            panel2.Location = new Point(12, 135);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(847, 125);
+            panel2.TabIndex = 46;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(661, 93);
+            label8.Name = "label8";
+            label8.Size = new Size(50, 20);
+            label8.TabIndex = 9;
+            label8.Text = "label8";
+            label8.Click += label8_Click;
+            // 
             // MainForm
             // 
+            AutoScaleMode = AutoScaleMode.Inherit;
             BackColor = Color.Bisque;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(889, 482);
+            ClientSize = new Size(871, 489);
+            Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(button4);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(lstReminders);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
             Controls.Add(menuStrip1);
             DoubleBuffered = true;
             ForeColor = SystemColors.ControlText;
             MainMenuStrip = menuStrip1;
+            MaximumSize = new Size(889, 536);
+            MinimumSize = new Size(889, 536);
             Name = "MainForm";
             Text = "Medicine Stock Management System with Reminder";
             Load += MainForm_Load;
@@ -254,6 +281,8 @@ namespace medicineStock.UI.Forms
             menuStrip1.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -341,6 +370,8 @@ namespace medicineStock.UI.Forms
 
             int reportCount = _reportService.GetAll().Count();
             label4.Text = $"Rapor Sayısı: {reportCount}";
+
+            label8.Text = DateTime.Now.ToString();
         }
 
         private ToolStripMenuItem hatırlatıcıYönetimiToolStripMenuItem;
@@ -374,5 +405,12 @@ namespace medicineStock.UI.Forms
 
         private Panel panel1;
         private Label label7;
+        private Panel panel2;
+        private Label label8;
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

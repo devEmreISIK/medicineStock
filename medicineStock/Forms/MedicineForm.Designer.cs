@@ -120,7 +120,7 @@
             lstMedicines.FormattingEnabled = true;
             lstMedicines.Location = new Point(12, 103);
             lstMedicines.Name = "lstMedicines";
-            lstMedicines.Size = new Size(214, 324);
+            lstMedicines.Size = new Size(242, 324);
             lstMedicines.TabIndex = 39;
             lstMedicines.SelectedIndexChanged += lstMedicines_SelectedIndexChanged;
             // 
@@ -128,7 +128,7 @@
             // 
             searchTxtBox.Location = new Point(71, 70);
             searchTxtBox.Name = "searchTxtBox";
-            searchTxtBox.Size = new Size(155, 27);
+            searchTxtBox.Size = new Size(183, 27);
             searchTxtBox.TabIndex = 38;
             searchTxtBox.TextChanged += searchTxtBox_TextChanged;
             // 
@@ -136,7 +136,7 @@
             // 
             btnUpdate.Location = new Point(132, 12);
             btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(94, 52);
+            btnUpdate.Size = new Size(122, 52);
             btnUpdate.TabIndex = 37;
             btnUpdate.Text = "Update";
             btnUpdate.UseVisualStyleBackColor = true;
